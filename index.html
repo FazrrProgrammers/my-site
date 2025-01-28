@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazrr Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1d1d1d;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .logo {
+            color: #9b59b6;
+            font-weight: 600;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            color: #8e44ad;
+        }
+
+        /* Navbar Menu */
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #8e44ad;
+            transform: translateY(-3px);
+        }
+
+        /* Menu Toggle for Small Screens */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            background-color: #fff;
+            height: 3px;
+            width: 30px;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .menu-active {
+            display: block;
+        }
+
+        /* Main content */
+        .container {
+            background: #1e1e1e;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            width: 100%;
+            margin: 120px auto;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h1 {
+            color: #9b59b6;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 2.8rem;
+        }
+
+        .container p {
+            color: #ccc;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .contact-button {
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: #fff;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            color: #bbb;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            background-color: #1d1d1d;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .container h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MySite</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>Halo, selamat datang!</h1>
+        <p>Website ini adalah contoh halaman modern dengan desain minimalis dan responsif. Cobalah menghubungi pemiliknya melalui tombol di bawah.</p>
+        <a href="https://t.me/FazrrEdan" target="_blank">
+            <button class="contact-button">Hubungi Owner di Telegram</button>
+        </a>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Fazrr. Semua hak cipta dilindungi.</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
+</body>
+</html>
